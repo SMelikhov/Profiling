@@ -1,0 +1,12 @@
+﻿{
+	"dependencies": {
+	},
+	"frameworks": {
+		".NETFramework,Version=v4.7.2": {}
+	},
+	"runtimes": {
+		"win-x64": {},
+		"win-anycpu": {},
+		"win": {}
+	}
+}

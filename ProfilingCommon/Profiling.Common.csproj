@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7B3E289F-77DF-43A9-ADEE-0300DB7C941E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Profiling.Common</RootNamespace>
+    <AssemblyName>Profiling.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <SignAssembly>false</SignAssembly>
+	  <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+	  <None Include="project.json" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\ProfilingInstanceDataItemDTO.cs" />
+    <Compile Include="InstanceData\AggregatedInfluxItem.cs" />
+    <Compile Include="InstanceData\PerformanceCounterItem.cs" />
+    <Compile Include="InstanceData\ProfilingInstanceDataItem.cs" />
+    <Compile Include="InstanceData\InfluxDbSender.cs" />
+    <Compile Include="InstanceData\IProfilingCollectInstanceData.cs" />
+    <Compile Include="InstanceData\MemoryProfiling.cs" />
+    <Compile Include="InstanceData\PerformanceCounters.cs" />
+    <Compile Include="InstanceData\ProfilingCollectInstanceData.cs" />
+    <Compile Include="InstanceData\ProfilingCollectInstanceDataFactory.cs" />
+    <Compile Include="InstanceData\ProfilingCollectInstanceDataStub.cs" />
+    <Compile Include="InstanceData\ProfilingInstatnceDataDisposable.cs" />
+    <Compile Include="InstanceData\QueueInstanceDataItem.cs" />
+    <Compile Include="Sampling\GcItem.cs" />
+    <Compile Include="Sampling\ProfilingReportSlowness.cs" />
+    <Compile Include="Tracing\ProfilingEventSource.cs" />
+    <Compile Include="Util\ConvertHelper.cs" />
+    <Compile Include="Util\DelayExecuter.cs" />
+    <Compile Include="Util\DisposeAction.cs" />
+    <Compile Include="DTO\DataContextMemoryProfilingItemDTO.cs" />
+    <Compile Include="DTO\FrozenLatencyDTO.cs" />
+    <Compile Include="DTO\LatencyDataDTO.cs" />
+    <Compile Include="DTO\LatencyIntervalDTO.cs" />
+    <Compile Include="DTO\MemoryInfoDTO.cs" />
+    <Compile Include="DTO\ProfilingAggregatedDTO.cs" />
+    <Compile Include="DTO\ProfilingAggregatedItemDTO.cs" />
+    <Compile Include="DTO\ProfilingBookmarkAggregatedDTO.cs" />
+    <Compile Include="DTO\ProfilingBookmarkMemoryDTO.cs" />
+    <Compile Include="DTO\ProfilingDetailKeyDTO.cs" />
+    <Compile Include="DTO\ProfilingKeyDTO.cs" />
+    <Compile Include="DTO\ProfilingLatencyDTO.cs" />
+    <Compile Include="DTO\ProfilingReportSlownessDTO.cs" />
+    <Compile Include="DTO\ProfilingSettingsDTO.cs" />
+    <Compile Include="DTO\ProfilingStackDTO.cs" />
+    <Compile Include="DTO\TrafficProfilingItemDTO.cs" />
+    <Compile Include="Sampling\ILatencyManager.cs" />
+    <Compile Include="Tracing\IProfilingContextDisposable.cs" />
+    <Compile Include="IProfilingSnapshot.cs" />
+    <Compile Include="Tracing\ProfilingSpecificProvider.cs" />
+    <Compile Include="Sampling\IStackTracker.cs" />
+    <Compile Include="Sampling\IWinFormsLatencyLogger.cs" />
+    <Compile Include="Util\Job.cs" />
+    <Compile Include="Sampling\LatencyInterval.cs" />
+    <Compile Include="Sampling\LatencyIntervalItem.cs" />
+    <Compile Include="Sampling\LatencyManager.cs" />
+    <Compile Include="Sampling\LogEntry.cs" />
+    <Compile Include="Tracing\Profiling.cs" />
+    <Compile Include="Tracing\Profiling.ProfilingContextDisposable.cs" />
+    <Compile Include="Tracing\Profiling.QueueItem.cs" />
+    <Compile Include="Tracing\ProfilingAggregatedHierarchyBuilder.cs" />
+    <Compile Include="Tracing\ProfilingAggregatedHierarchyItem.cs" />
+    <Compile Include="Tracing\ProfilingAggregatedHierarchyRootItem.cs" />
+    <Compile Include="Tracing\ProfilingAggregatedItem.cs" />
+    <Compile Include="Tracing\ProfilingDetailKey.cs" />
+    <Compile Include="ProfilingHelper.cs" />
+    <Compile Include="Tracing\ProfilingKey.cs" />
+    <Compile Include="Sampling\ProfilingLatency.cs" />
+    <Compile Include="ProfilingLevel.cs" />
+    <Compile Include="ProfilingModeSettings.cs" />
+    <Compile Include="ProfilingSettings.cs" />
+    <Compile Include="Tracing\ProfilingSnapshot.cs" />
+    <Compile Include="Sampling\ProfilingStack.cs" />
+    <Compile Include="Sampling\ProfilingStackAggregator.cs" />
+    <Compile Include="Sampling\ProfilingStackDifference.cs" />
+    <Compile Include="Sampling\ProfilingStackFilter.cs" />
+    <Compile Include="Sampling\ProfilingStackItem.cs" />
+    <Compile Include="DTO\ProfilingStackItemDTO.cs" />
+    <Compile Include="Sampling\ProfilingStackMerger.cs" />
+    <Compile Include="Tracing\ProfilingThreadContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tracing\ProfilingThreadScope.cs" />
+    <Compile Include="Sampling\StackEntry.cs" />
+    <Compile Include="Sampling\StackItem.cs" />
+    <Compile Include="Sampling\Stacks.cs" />
+    <Compile Include="Sampling\StackTracker.cs" />
+    <Compile Include="Util\Split.cs" />
+    <Compile Include="Util\TimeSlice.cs" />
+    <Compile Include="Util\XmlSerializationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
