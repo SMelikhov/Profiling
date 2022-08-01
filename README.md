@@ -1,11 +1,14 @@
 # Profiling
-Sampling and tracing profiler
+***Sampling and tracing profiler***
 
 
 Code Examples
 
-Profile thread
+____
 
+***Profile thread***
+
+```C#
 var tracker = new StackTracker(new Stacks(100, 20, true, 10000));
  
  
@@ -16,11 +19,12 @@ var thread = new Thread(() =>
 ....
   }
 });
+```
+____
 
+***Profile UI thread***
 
-Profile UI thread
-
-
+```C#
 _latency = new UILatencyManager(this, false, new SettingsManagerProfilingStub(), Thread.CurrentThread); //service app lifetime
 ...
 _latency.Start(new ProfilingSettings
@@ -35,3 +39,4 @@ ProfilingLevel = ProfilingLevel.ProfilingStacksOnly
 });
 .....
 _latency.GetStacks()
+```
