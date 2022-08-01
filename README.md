@@ -16,3 +16,22 @@ var thread = new Thread(() =>
 ....
   }
 });
+
+
+Profile UI thread
+
+
+_latency = new UILatencyManager(this, false, new SettingsManagerProfilingStub(), Thread.CurrentThread); //service app lifetime
+...
+_latency.Start(new ProfilingSettings
+{
+CollectLatency = true,
+StartCollectingBeforeThreshold = true,
+LatencySnapshotPeriod = 20,
+LatencyThreshold = 100,
+ProfilingLevel = ProfilingLevel.ProfilingStacksOnly
+ 
+ 
+});
+.....
+_latency.GetStacks()
