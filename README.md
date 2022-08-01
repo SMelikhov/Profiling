@@ -45,3 +45,5 @@ ProfilingLevel = ProfilingLevel.ProfilingStacksOnly
 .....
 _latency.GetStacks()
 ```
+
+![Image alt](https://github.com/SMelikhov/Profiling/raw/main/Profiling.jpg)
