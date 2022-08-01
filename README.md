@@ -1,8 +1,13 @@
 # Profiling
 ***Sampling and tracing profiler***
 
+Main purpose of that profiling is to see what is going on in UI thread. 
+Also stacks could be collected from any thread.
+It can can collect this information from Production.
 
-Code Examples
+***Restrictions: .Net 4.7***
+
+***Code Examples***
 
 ____
 
