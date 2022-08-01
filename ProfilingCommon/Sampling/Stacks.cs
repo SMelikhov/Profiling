@@ -151,7 +151,7 @@ namespace Profiling.Common.Sampling
 					if (_waitHandles[eventIndex] == _stopEvent.WaitHandle)
 						return;
 				}
-				if (Debugger.IsAttached || _postponed)
+				if (/*Debugger.IsAttached ||*/ _postponed)
 				{
 					// do not disturb us while we are debugging!
 					continue;
